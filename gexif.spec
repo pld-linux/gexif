@@ -12,7 +12,6 @@ BuildRequires:	libexif-gtk-devel >= 0.3.3
 Requires:	libexif-gtk >= 0.3.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Graphical utility to show EXIF information hidden in JPEG files.
