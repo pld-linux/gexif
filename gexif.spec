@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/libexif/%{name}-%{version}.tar.bz2
+# Source0-md5:	472c109ffdb3f8528eabc039e0ac495b
 URL:		http://libexif.sourceforge.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libexif-gtk-devel >= 0.3.3
