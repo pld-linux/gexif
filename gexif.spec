@@ -2,12 +2,14 @@ Summary:	Utility to show EXIF information hidden in JPEG files
 Summary(pl):	Narzêdzie do wy¶wietlania danych EXIF ukrytych w plikach JPEG
 Name:		gexif
 Version:	0.5
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/libexif/%{name}-%{version}.tar.bz2
 # Source0-md5:	472c109ffdb3f8528eabc039e0ac495b
+Source1:	%{name}-pl.po
 Patch0:		%{name}-gtk24.patch
+Patch1:		%{name}-codeset.patch
 URL:		http://libexif.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -29,6 +31,10 @@ pokazywania informacji EXIF ukrytych w plikach JPEG.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+cp %{SOURCE1} po/pl.po
+%{__perl} -pi -e 's/de es fr/de es fr pl/' configure.in
 
 %build
 %{__gettextize}
