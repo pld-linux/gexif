@@ -1,16 +1,15 @@
 Summary:	Utility to show EXIF information hidden in JPEG files
 Summary(pl):	Narzêdzie do wy¶wietlania danych EXIF ukrytych w plikach JPEG
 Name:		gexif
-Version:	0.3
+Version:	0.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/libexif/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/libexif/%{name}-%{version}.tar.bz2
 URL:		http://libexif.sourceforge.net/
-BuildRequires:	autoconf
-BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	gtk+2-devel
 BuildRequires:	libexif-devel
-BuildRequires:	libexif-gtk-devel
+BuildRequires:	libexif-gtk-devel >= 0.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -26,7 +25,6 @@ pokazywania informacji EXIF ukrytych w plikach JPEG.
 %setup -q
 
 %build
-%{__autoconf}
 %configure
 
 %{__make}
@@ -36,10 +34,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
