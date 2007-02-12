@@ -1,5 +1,5 @@
 Summary:	Utility to show EXIF information hidden in JPEG files
-Summary(pl):	Narzêdzie do wy¶wietlania danych EXIF ukrytych w plikach JPEG
+Summary(pl.UTF-8):   NarzÄ™dzie do wyÅ›wietlania danych EXIF ukrytych w plikach JPEG
 Name:		gexif
 Version:	0.5
 Release:	6
@@ -24,8 +24,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Graphical utility to show EXIF information hidden in JPEG files.
 
-%description -l pl
-Graficzne narzêdzie dzia³aj±ce z linii poleceñ, s³u¿±ce do
+%description -l pl.UTF-8
+Graficzne narzÄ™dzie dziaÅ‚ajÄ…ce z linii poleceÅ„, sÅ‚uÅ¼Ä…ce do
 pokazywania informacji EXIF ukrytych w plikach JPEG.
 
 %prep
