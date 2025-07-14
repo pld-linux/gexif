@@ -30,8 +30,8 @@ pokazywania informacji EXIF ukrytych w plikach JPEG.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 cp %{SOURCE1} po/pl.po
 %{__perl} -pi -e 's/de es fr/de es fr pl/' configure.in
